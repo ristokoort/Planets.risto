@@ -31,6 +31,6 @@ public partial class App : Application
 
 
 
-		MainPage = new AppShell();
-	}
+        MainPage = new NavigationPage(new StartPage());
+    }
 }
