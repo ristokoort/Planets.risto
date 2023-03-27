@@ -50,6 +50,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\monkey.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Folder Include="Resources\Fonts\" />
 	</ItemGroup>
 

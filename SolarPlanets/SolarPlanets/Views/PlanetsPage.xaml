@@ -6,7 +6,7 @@
 
 
     <Grid>
-        
+
         <!--Menu grid-->
         <Grid
             x:Name="Menu">
@@ -62,23 +62,22 @@
                     Style="{StaticResource PageHeaderSubtitleStyle}"
                     HorizontalOptions="End"/>
 
-               
-            </VerticalStackLayout>            
+
+            </VerticalStackLayout>
+
+
+
+
         </Grid>
-        
+
         <!--Main Content-->
-        
+
         <Grid
             x:Name="MainContentGrid"
             Padding="24,52,24,0"
             BackgroundColor="{StaticResource PageBackgroundColor}"
-            ColumnDefinitions="*,Auto"
-            RowDefinitions="Auto,*">
+            ColumnDefinitions="Auto,*">
 
-            <Label
-              LineBreakMode="WordWrap"
-              Style="{StaticResource PageHeaderStyle}"
-              Text="Let's Explore"/>
 
 
             <VerticalStackLayout
@@ -86,7 +85,7 @@
                 Grid.Row="0"
                 Grid.Column="0"
                 VerticalOptions="Center">
-                
+
                 <Label
               Style="{StaticResource PageHeaderStyle}"
               Text="Let's Explore"/>
@@ -97,8 +96,45 @@
 
 
             </VerticalStackLayout>
-        </Grid>
         
+
+
+        <Border
+                WidthRequest="56"
+                HeightRequest="56"
+                VerticalOptions="Center"
+                HorizontalOptions="End"
+                Stroke="{StaticResource LightBorderColor}"
+                StrokeThickness="6"
+                Grid.Row="0"
+                Grid.Column="1">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="28"/>
+
+            </Border.StrokeShape>
+
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ProfilePicture_Clicked"/>
+            </Border.GestureRecognizers>
+
+            <Image
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                WidthRequest="50"
+                HeightRequest="50"
+                Source="monkey.jpg">
+                <Image.Clip>
+                    <EllipseGeometry
+                            Center="25,25"
+                            RadiusX="25"
+                            RadiusY="25"/>
+                </Image.Clip>
+            </Image>
+
+        </Border>
+
+
+
         <!--Main Content ScrollView-->
         <ScrollView
             Grid.Row="1"
@@ -113,7 +149,7 @@
                 <!--Search Box-->
                 <Border
                         Padding="12,4"
-                        BackgroundColor="#33cccc"
+                        BackgroundColor="DarkGray"
                         Stroke="{StaticResource BorderColor}"
                         HorizontalOptions="Fill"
                         Margin="0,0,24,0"
@@ -140,19 +176,109 @@
                             Grid.Column="1"
                             VerticalOptions="Center"
                             VerticalTextAlignment="Center"
-                            Style="{StaticResource MenuLabelStyle}"
-                            
-                            BackgroundColor="DarkGray"/>
+                            Style="{StaticResource MenuLabelStyle}"/>
+
+
 
                     </Grid>
                 </Border>
+                
+                <!--Most popular Section-->
+                    <Label
+                        Style="{StaticResource PageSubHeaderStyle}"
+                        Margin="0,12,0,0">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Most Popular   "/>
+                                <Span Text="→" FontSize="20"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <CollectionView
+                        x:Name="lstPopularPlanets"
+                        HeightRequest="280"
+                        SelectionMode="Single"
+                        SelectionChanged="Planets_SelectionChanged">
+
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout
+                                Orientation="Horizontal"
+                                ItemSpacing="16"/>
+                        </CollectionView.ItemsLayout>
+                        
+                    </CollectionView>
+                
                 </VerticalStackLayout>
-
-
         </ScrollView>
 
-        
-        
+        <Border
+             Padding="16,0"
+             BackgroundColor="#393965"
+             Stroke="{StaticResource BorderColor}"
+             HorizontalOptions="Fill"
+             VerticalOptions="End"
+             Margin="0,0,0,20"
+             HeightRequest="90"
+             Grid.Column="0"
+             Grid.ColumnSpan="2">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="45"/>
+                </Border.StrokeShape>
+                <Grid
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Center"
+                    RowDefinitions="Auto,Auto"
+                    ColumnDefinitions="*,*,*"
+                    RowSpacing="6">
+
+                    <Image
+                        WidthRequest="30"
+                        HeightRequest="30"
+                        Source="imgexplore.png"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalOptions="Center" />
+                    <Label
+                        Text="Explore"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource MenuLabelStyle}"/>
+
+                    <Image
+                        WidthRequest="30"
+                        HeightRequest="30"
+                        Source="imgfavorite.png"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        HorizontalOptions="Center"/>
+                    <Label
+                        Text="Favorite"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource MenuLabelStyle}"/>
+
+                    <Image
+                        WidthRequest="30"
+                        HeightRequest="30"
+                        Source="imgprofile.png"
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        HorizontalOptions="Center"/>
+                    <Label
+                        Text="Profile"
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        HorizontalOptions="Center"
+                        Style="{StaticResource MenuLabelStyle}"/>
+                    
+                    
+
+                </Grid>
+
+            </Border>
+        </Grid>
     </Grid>
-    
 </ContentPage>
