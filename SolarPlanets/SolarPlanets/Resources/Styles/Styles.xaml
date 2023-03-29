@@ -52,6 +52,27 @@
         <Setter Property="TextColor" Value="#CCCCCC"/>
     </Style>
 
+    
+    
+    <Style TargetType="Label" x:Key="FeaturedPlanetHeaderSubtitleStyle" BasedOn="{StaticResource BaseRegularLabelStyle}">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="TextColor" Value="{StaticResource LightTextColor}"/>
+    </Style>
+
+    <Style TargetType="Label" x:Key="FeaturedPlanetHeaderHeaderStyle" BasedOn="{StaticResource BaseMediumLabelStyle}">
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="TextColor" Value="{StaticResource LightTextColor}"/>
+    </Style>
+
+
+    <Style TargetType="Label" x:Key="AllPlanetHeaderStyle" BasedOn="{StaticResource BaseMediumLabelStyle}">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="TextColor" Value="{StaticResource LightTextColor}"/>
+    </Style>
+
+
+
+
     <!--Button Styles-->
     <Style TargetType="Button" x:Key="ButtonStyle">
         <Setter Property="FontSize" Value="22" />
