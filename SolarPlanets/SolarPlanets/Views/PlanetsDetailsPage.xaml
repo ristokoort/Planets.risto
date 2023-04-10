@@ -48,6 +48,41 @@
                     HeightRequest="240"
                     Margin="24,0"/>
 
+                
+               <!--Planet Name-->
+                <Label
+                    Margin="0,-24,0,0"
+                    Style="{StaticResource AllPlanetHeaderSubtitleStyle}"
+                    Text="{Binding Name}"/>
+                <Label
+                    Margin="0,-12,0,0"
+                    Style="{StaticResource FeaturedPlanetHeaderSubtitleStyle}"
+                    Text="{Binding Subtitle}" />
+
+                <Rectangle
+                    HorizontalOptions="Fill"
+                    HeightRequest="2"
+                    Stroke="Transparent"
+                    Fill="{StaticResource LightBorderColor}"/>
+                
+                <!--Planet info-->
+                <Label
+                    Style="{StaticResource PlanetDetailsTextStyle}"
+                    LineBreakMode="WordWrap"
+                    Text="{Binding Description}"/>
+                    
+                <!--Divider-->
+                <Rectangle
+                    HorizontalOptions="Fill"
+                    HeightRequest="2"
+                    Stroke="Transparent"
+                    Fill="{StaticResource LightBorderColor}"/>
+
+                <Label
+                    Style="{StaticResource AllPlanetHeaderSubtitleStyle}"
+                    Text="Gallery"/>
+
+
             </VerticalStackLayout>
             
         </ScrollView>
